@@ -28,7 +28,7 @@ if __name__ == '__main__':
     context = ""
 
     # glados账号cookie 直接使用数组 如果使用环境变量需要字符串分割一下
-    cookies = koa:sess=eyJ1c2VySWQiOjUyMzA3NCwiX2V4cGlyZSI6MTc3MTQ2ODUxMDYzNCwiX21heEFnZSI6MjU5MjAwMDAwMDB9; koa:sess.sig=PvrsXTZy9-OWCuoZ4w3mWtfZnV0
+    cookies = os.environ.get("COOKIES", [koa:sess=eyJ1c2VySWQiOjUyMzA3NCwiX2V4cGlyZSI6MTc3MTQ2ODUxMDYzNCwiX21heEFnZSI6MjU5MjAwMDAwMDB9; koa:sess.sig=PvrsXTZy9-OWCuoZ4w3mWtfZnV0]).split("&")
     if cookies[0] != "":
 
         check_in_url = "https://glados.space/api/user/checkin"        # 签到地址
