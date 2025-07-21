@@ -20,7 +20,7 @@ def send_wechat(token, title, msg):
 # -------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     # pushdeer key 申请地址 https://www.pushdeer.com/product.html
-    sckey = os.environ.get("SENDKEY", "")
+    sckey = 58998de6fdf6414e8851bad3181470c2
 
     # 推送内容
     title = ""
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     context = ""
 
     # glados账号cookie 直接使用数组 如果使用环境变量需要字符串分割一下
-    cookies = os.environ.get("COOKIES", []).split("&")
+    cookies = koa:sess=eyJ1c2VySWQiOjUyMzA3NCwiX2V4cGlyZSI6MTc3MTQ2ODUxMDYzNCwiX21heEFnZSI6MjU5MjAwMDAwMDB9; koa:sess.sig=PvrsXTZy9-OWCuoZ4w3mWtfZnV0
     if cookies[0] != "":
 
         check_in_url = "https://glados.space/api/user/checkin"        # 签到地址
