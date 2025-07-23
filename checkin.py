@@ -5,15 +5,15 @@ import os
 # from pypushdeer import PushDeer # 使用push plus，不用pushdeer
 import requests
  
-def send_wechat(token, title, msg):
-    token = token
-    title = title
-    content = msg
-    template = 'html'
-    url = f"https://www.pushplus.plus/send?token={token}&title={title}&content={content}&template={template}"
-    print(url)
-    r = requests.get(url=url)
-    print(r.text)
+# def send_wechat(token, title, msg):
+#     token = token
+#     title = title
+#     content = msg
+#     template = 'html'
+#     url = f"https://www.pushplus.plus/send?token={token}&title={title}&content={content}&template={template}"
+#     print(url)
+#     r = requests.get(url=url)
+#     print(r.text)
 
 # -------------------------------------------------------------------------------------------
 # github workflows
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     context = ""
 
     # glados账号cookie 直接使用数组 如果使用环境变量需要字符串分割一下
-    cookies = os.environ.get("COOKIES", [koa:sess=eyJ1c2VySWQiOjUyMzA3NCwiX2V4cGlyZSI6MTc3MTQ2ODUxMDYzNCwiX21heEFnZSI6MjU5MjAwMDAwMDB9; koa:sess.sig=PvrsXTZy9-OWCuoZ4w3mWtfZnV0]).split("&")
+    cookies = os.environ.get("COOKIES", "koa:sess=eyJ1c2VySWQiOjUyMzA3NCwiX2V4cGlyZSI6MTc3MTQ2ODUxMDYzNCwiX21heEFnZSI6MjU5MjAwMDAwMDB9; koa:sess.sig=PvrsXTZy9-OWCuoZ4w3mWtfZnV0").split("&")
     if cookies[0] != "":
 
         check_in_url = "https://glados.space/api/user/checkin"        # 签到地址
@@ -102,9 +102,9 @@ if __name__ == '__main__':
     
     # 推送消息
     # 未设置 sckey 则不进行推送
-    if not sckey:
-        print("Not push")
-    else:
-        send_wechat(sckey, title, context)
+#     if not sckey:
+#         print("Not push")
+#     else:
+#         send_wechat(sckey, title, context)
         # pushdeer = PushDeer(pushkey=sckey) 
         # pushdeer.send_text(title, desp=context)
